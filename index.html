@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blake's Electronics</title>
+
+    <!-- BootStrap -->
+
+    <!-- <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js'></script> -->
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css">
+
+     <!-- CSS -->
+     <link rel="stylesheet" href="index.css">
+
+    <!-- JavaScript -->
+    <script src='index.js' defer></script>
+</head>
+
+<body>
+    <section>
+        <div class='header-container'>
+            <h1>Blake's Electronics</h1>
+        </div>
+    </section>
+
+    <section>
+
+        <div class='products-container'>
+            
+            <div class='product-container'>
+                    <img class='product-contents product-img' src='product-img/galaxys22.png' height='150px'>
+                    <h3 class='product-contents product-name'>Samsung Galaxy S22+</h3>
+                    <p class='product-contents'>From <span class='product-price'>$1,050.00</span></p>
+                    <button class='product-contents add-to-cart-btn btn btn-primary'>Buy</button>
+            </div>
+
+            <div class='product-container'>
+                    <img class='product-contents product-img' src='product-img/Qn90.png' height='150px'>
+                    <h3 class='product-contents product-name'>Samsung Qn90 55' Tv</h3>
+                    <p class='product-contents'>From <span class='product-price'>$1,599.00</span></p>
+                    <button class='product-contents add-to-cart-btn btn btn-primary'>Buy</button>
+            </div>
+            
+            <div class='product-container'>
+                    <img class='product-contents product-img' src='product-img/xbox-x.PNG' height='150px'>
+                    <h3 class='product-contents product-name'>Xbox X Series</h3>
+                    <p class='product-contents'>From <span class='product-price'>$499.00</span></p>
+                    <button class='product-contents add-to-cart-btn btn btn-primary'>Buy</button>
+            </div>
+
+            <div class='product-container'>
+                    <img class='product-contents product-img' src='product-img/Samsung-S5e.png' height='150px'>
+                    <h3 class='product-contents product-name'>Samsung s5e tablet</h3>
+                    <p class='product-contents'>From <span class='product-price'>$399.00</span></p>
+                    <button class='product-contents add-to-cart-btn btn btn-primary'>Buy</button>
+            </div>
+
+            <div class='product-container'>
+                <img class='product-contents product-img' src='product-img/Samsun-soundbar.png' height='150px' width='200px'>
+                <h3 class='product-contents product-name'>Samsung Sound Bar</h3>
+                <p class='product-contents'>From <span class='product-price'>$.99</span></p>
+                <button class='product-contents add-to-cart-btn btn btn-primary'>Buy</button>
+            </div>
+
+            <div class='product-container'>
+                <img class='product-contents product-img' src='product-img/wd-hard-drive.png' height='150px'>
+                <h3 class='product-contents product-name'>WD 2TB Portable Storage</h3>
+                <p class='product-contents'>From <span class='product-price'>$79.99</span></p>
+                <button class='product-contents add-to-cart-btn btn btn-primary'>Buy</button>
+            </div>
+
+            <div class='product-container'>
+                <img class='product-contents product-img' src='product-img/macbook-pro.png' height='150px'>
+                <h3 class='product-contents product-name'>MacBook Pro 13' M1</h3>
+                <p class='product-contents'>From <span class='product-price'>$1,499.00</span></p>
+                <button class='product-contents add-to-cart-btn btn btn-primary'>Buy</button>
+            </div>
+
+            <div class='product-container'>
+                <img class='product-contents product-img' src='product-img/samsung-buds3.png' height='150px' >
+                <h3 class='product-contents product-name'>Samsung Galaxy Buds Pro</h3>
+                <p class='product-contents'>From <span class='product-price'>$199.00</span></p>
+                <button class='product-contents add-to-cart-btn btn btn-primary'>Buy</button>
+            </div>
+
+            <div class='product-container'>
+                <img class='product-contents product-img' src='product-img/iphone.png' height='150px'>
+                <h3 class='product-contents product-name'>iPhone 13 Pro Max</h3>
+                <p class='product-contents'>From <span class='product-price'>$1,199.00</span></p>
+                <button class='product-contents add-to-cart-btn btn btn-primary'>Buy</button>
+            </div>
+
+            <div class='product-container'>
+                <img class='product-contents product-img' src='product-img/portable-moniter.png' height='150px'>
+                <h3 class='product-contents product-name'>Portable Monitor</h3>
+                <p class='product-contents'>From <span class='product-price'>$169.00</span></p>
+                <button class='product-contents add-to-cart-btn btn btn-primary'>Buy</button>
+            </div>
+
+            <div class='product-container'>
+                <img class='product-contents product-img' src='product-img/imac.png' height='150px'>
+                <h3 class='product-contents product-name'>iMac Apple 24' M1</h3>
+                <p class='product-contents '>From <span class='product-price'>$1,499.00</span></p>
+                <button class='product-contents add-to-cart-btn btn btn-primary'>Buy</button>
+            </div>
+        
+        </div>
+
+    </section>
+    
+    <section id='cart'>
+
+        <h2 class='cart-title'>Cart</h2>
+        <hr>
+
+        <div class="default-msg-container">
+
+            <p class='default-cart-msg'>Your Cart is empty.</p>
+
+        </div>
+
+        <div class='cart-items'></div>
+
+        <hr>
+
+        <div class="purchase-container">
+            <div class="total-container">
+                <h3 class='total-tag'>Total</h3>
+                <h3 class= 'total-number'>$0</h3>
+            </div>
+            <div class='buy-container'></div>
+            <button class='buy-btn btn btn-warning'>Place your order</button>
+            </div>
+        </div>
+        
+    </section>
+</body>
+</html>
