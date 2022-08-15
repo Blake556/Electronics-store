@@ -26,62 +26,37 @@ function ready() {
         }
     
     document.querySelector('.buy-btn').addEventListener('click', purchaseButton)
-
-    //document.querySelectorAll('.add-to-cart-btn').addEventListener('click', EmptyCart)
 }
 
 
 function EmptyCart() {
-
     let defaultMsgElement = document.querySelector('.default-msg-container')
-    console.log(defaultMsgElement)
     let cartrow = document.querySelector('.cart-row')
 
-    if (cartrow) {
-        defaultMsgElement.style.display = "none";
-        console.log('Element Hidden')
-    } else if (cartrow == null ) {
+    if (cartrow == null ) {
         defaultMsgElement.style.display = 'block';
-        console.log('Element Block')
     } else {
-        console.log('err')
-    }
-
-    /*
-    let cartContainer = document.querySelector('.default-msg-container')
-    let defaultMsgElement = document.querySelector('.default-msg')
-    let cartrow = document.querySelector('.cart-row')
-    
-    let reAddDefaultDiv = document.createElement('p')
-
-    reAddDefaultDiv.classList.add('default-msg')
-    reAddDefaultDiv.innerHTML = '<p>Your Cart is empty.<p>' 
-    
-        //console.log(cartContainer.childNodes[5])
-
-    if(cartrow) {
-        defaultMsgElement.remove() // || console.log('Already Removed')
-    } else if (cartrow == null ) {
-        cartContainer.append(reAddDefaultDiv)
-    } else {
-        console.log('err')
-    }
-
-        //console.log(cartContainer.childNodes[5])
-    */
+        defaultMsgElement.style.display = "none";
+    } 
 }
 
 
 
 function purchaseButton() {
-    alert('Order placed, thanks')
+    let cartRow = document.querySelector('.cart-row')
+
+        if (cartRow == null ) {
+        alert('No Items in Cart: Add items to cart to purchase')
+        } else {
+            alert('Order placed, thanks')
+        }
+
     let cartItems = document.querySelector('.cart-items')
         while (cartItems.hasChildNodes()) {
             cartItems.removeChild(cartItems.firstChild)
             updateCartTotal()
             EmptyCart()
         }
-   
 }
 
 function removeElementButton(event) {
@@ -91,11 +66,9 @@ function removeElementButton(event) {
     EmptyCart()
 }
 
-
 function addToCartButton(event) {
     let buttonClicked = event.target
     let ElementClicked = buttonClicked.parentElement
-    //let productImgContainer = ElementClicked.querySelectorAll('.product-img')
     let productImg = ElementClicked.querySelectorAll('.product-img')[0].src
     let productName = ElementClicked.querySelectorAll('.product-name')[0].innerText
     let productPrice = ElementClicked.querySelectorAll('.product-price')[0].innerText
@@ -108,7 +81,6 @@ function addToCart(productImg, productName, productPrice) {
     let createRow = document.createElement('div')
     createRow.classList.add('cart-row')
     let cartItems = document.querySelector('.cart-items')
-
     let cartItemName = document.querySelectorAll('.cart-item')
 
         for(let i = 0; i < cartItemName.length; i++) {
@@ -119,9 +91,9 @@ function addToCart(productImg, productName, productPrice) {
         }
     let cartRowContent = 
             `   
-            
+                <div class='cart-image-container'>
                 <img class='cart-img' src='${productImg}'>
-               
+               </div>
                 <div >
                     <h3 class='cart-item'>${productName}</h3>
                 </div>
@@ -141,14 +113,13 @@ function addToCart(productImg, productName, productPrice) {
                     <h3 class='item-price'>${productPrice}</h3>
                     <p class='item-remove-btn btn btn-danger'>Remove</p>
                 </div>
-            `
-        
+                
+            ` 
         createRow.innerHTML = cartRowContent
         cartItems.append(createRow)
         createRow.querySelector('.item-remove-btn').addEventListener('click', removeElementButton)
         createRow.querySelector('.item-quantity-selector').addEventListener('change', updateCartTotal)
 }
-
 
 function updateCartTotal() {
     let cartItems = document.querySelectorAll('.cart-items')[0]
@@ -160,8 +131,7 @@ function updateCartTotal() {
         let quantityElement = cartRow.querySelectorAll('.item-quantity-selector')[0]
         let price = parseFloat(priceElement.innerText.replace('$', '').replace(',', ''))
         let quantity = quantityElement.value
-        total = total + (price * quantity)
-            
+        total = total + (price * quantity)    
      }   
     document.querySelector('.total-number').innerText = '$' + total.toLocaleString() + '.00'
 }
